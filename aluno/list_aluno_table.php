@@ -19,7 +19,7 @@ $result = mysqli_query($conexao, $query);
 <body>
 
 <h2>Lista de Alunos</h2>
-<a href="add_aluno_form.php" class="btn editar">+ Novo Aluno</a>
+<a href="add_aluno_form.php" class="btn editar">Novo Aluno</a>
 <table>
     <tr>
         <th>ID</th>
@@ -41,13 +41,17 @@ while($row = mysqli_fetch_assoc($result)) {
         <td>
 
             <form action='edit_aluno_form.php' method='GET' style='display:inline;'>
+
                 <input type='hidden' name='id' value='$id'>
                 <input type='submit' value='Editar'>
+
             </form>
 
             <form action='delete_aluno.php' method='POST' style='display:inline;'>
+
                 <input type='hidden' name='id' value='$id'>
                 <input type='submit' value='Deletar'>
+                
             </form>
 
         </td>

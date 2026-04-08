@@ -2,7 +2,7 @@
 require_once "../db.php";
 $conexao = getConexao();
 
-// pegar todos os personais
+// SELECT do personais
 $query = "SELECT * FROM personal";
 $result = mysqli_query($conexao, $query);
 ?>
@@ -27,7 +27,7 @@ $result = mysqli_query($conexao, $query);
     <label>Personal:</label>
     <select name="personal_id" required>
         <option value="">-- Escolha --</option>
-
+// escolhe o personal com o while, row pra fazer as linhas 
         <?php
         while($row = mysqli_fetch_assoc($result)) {
             echo "<option value='{$row['personalID']}'>{$row['personalName']}</option>";
