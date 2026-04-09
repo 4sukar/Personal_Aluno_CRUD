@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexao = getConexao();
     $id = $_POST["id"];
 
-    var_dump($_POST);
     $query = "DELETE FROM personal WHERE personalID = $id";
 
     if (mysqli_query($conexao, $query)) {

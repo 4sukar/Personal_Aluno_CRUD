@@ -24,6 +24,16 @@ $result = mysqli_query($conexao, $query);
 
     <br><br>
 
+<label>genero:</label>
+
+<select name="genero">
+    <option value="male">Masculino</option>
+    <option value="female">Feminino</option>
+    <option value="other">Outro</option>
+</select>
+
+<br><br>
+
     <label>Personal:</label>
     <select name="personal_id" required>
         <option value="">-- Escolha --</option>

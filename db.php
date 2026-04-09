@@ -1,7 +1,7 @@
 <?php 
 
 function getConexao() {
-$sevidor = "localhost:32768";
+$sevidor = "localhost:32772";
 $usuario = "root";
 $senha = "";
 $banco = "dbPersonal";

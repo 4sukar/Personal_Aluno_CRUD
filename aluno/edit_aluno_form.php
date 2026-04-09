@@ -54,6 +54,13 @@ mysqli_close($conexao);
 
     <input type="submit" value="Salvar">
 
+    <label>Gênero:</label>
+<select name="genero">
+    <option value="male" <?= $aluno['genero']=='male'?'selected':'' ?>>Masculino</option>
+    <option value="female" <?= $aluno['genero']=='female'?'selected':'' ?>>Feminino</option>
+    <option value="other" <?= $aluno['genero']=='other'?'selected':'' ?>>Outro</option>
+</select>
+
 </form>
 
 </body>

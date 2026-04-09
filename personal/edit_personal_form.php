@@ -37,6 +37,17 @@ mysqli_close($conexao);
             <a href="list_personal_table.php" class="btn voltar">Voltar</a>
         </div>
     </form>
+
+    <label>Valor:</label>
+<input type="number" name="valor" step="0.01" value="<?= $personal['valor'] ?>"><br><br>
+
+<label>Gênero:</label>
+<select name="genero">
+    <option value="male" <?= $personal['genero']=='male'?'selected':'' ?>>Masculino</option>
+    <option value="female" <?= $personal['genero']=='female'?'selected':'' ?>>Feminino</option>
+    <option value="other" <?= $personal['genero']=='other'?'selected':'' ?>>Outro</option>
+</select>
+
 </div>
 
 </body>

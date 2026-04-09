@@ -4,9 +4,13 @@ require_once "../db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){ 
     $conexao = getConexao();
-    $nome = $_POST["nome"];
 
-    $query = "INSERT INTO personal (personalName) VALUES('$nome')";
+    $nome = $_POST["nome"];
+    $valor = $_POST["valor"];
+    $genero = $_POST["genero"];
+
+    $query = "INSERT INTO personal (personalName, valor, genero) 
+              VALUES('$nome', $valor, '$genero')";
 
     if (mysqli_query($conexao, $query)) {
         header("Location: list_personal_table.php");
@@ -20,18 +24,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
 </head>
 <body>
-    <form action="add_personal_form.php" method = "POST">
-        <label>Nome:</label>
+
+<form action="add_personal_form.php" method="POST">
+
+    <label>Nome:</label>
     <input type="text" name="nome" required><br><br>
-     <input type="submit" value="Inserir Nome">  
-    </form>
+
+    <label>Valor mensal:</label>
+    <input type="number" name="valor" step="0.01" required><br><br>
+
+    <label>Gênero:</label>
+    <select name="genero">
+        <option value="male">Masculino</option>
+        <option value="female">Feminino</option>
+        <option value="other">Outro</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Cadastrar Personal">
+
+</form>
+
 </body>
 </html>
